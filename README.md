@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+#Get started
+1.clone this repo and install dependencies with yarn or npm.
+2. go to https://dispex.org/api/vtest/docs/swagger/index.html click authorize and get 
+your key 
+3. create .env file in project folder and copy text from .env.example with replace REACT_APP_AUTH_KEY  on your key 
+4. start the app
+# Warning  
+The application may not work stably because backend not all time worked correctly
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Additional Info
+it is testing work to company 
+Task:
+Поиск адреса и список жильцов должны быть на одном экране
+Добавление/изменение/удаление данных - в модальных диалогах
 
-## Available Scripts
+стэк: 
+javaScript react/hooks/redux/redux-thunk
+можно использовать: axios, antd или material ui
+TypeScript не использовать
 
-In the project directory, you can run:
+API BASE URL : https://dispex.org/api/vtest
 
-### `yarn start`
+https://dispex.org/api/vtest/docs/swagger/index.html
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Функционал:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1) Выбор адреса
+   Улица -> Дом -> Квартира
+   (возможность поиска)
 
-### `yarn test`
+API:
+GET /Request/streets
+GET /Request/houses/{id}
+GET /Request/house_flats/{id}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+можно использовать только улицы где cityId = 1.
+для тестирования использовать дома Федюнинского 30 (все корпуса)
++ привязываться к квартирам, а не к подъездам и домам
 
-### `yarn build`
+2.a) Добавление и Привязка жильца к выбранной квартире
+(Номер телефона , email, ФИО),  
+Обязательный параметр - Номер телефона
+2.b) Изменение данных жильца
+2.c) Отвязка жильца от квартиры
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API:
+POST /HousingStock/client
+PUT    /HousingStock/bind_client
+DELETE /HousingStock/bind_client/{id}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3) Отображение всех жильцов в квартире
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+API:
+GET /HousingStock/clients

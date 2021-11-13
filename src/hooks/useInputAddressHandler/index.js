@@ -1,0 +1,1 @@
+export { useInputAddressHandler } from './useInputAddressHandler';

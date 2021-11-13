@@ -1,0 +1,59 @@
+{
+  "env": {
+    "jest": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react",
+    "prettier",
+    "react-hooks"
+  ],
+  "rules": {
+    "no-shadow": "off",
+    "no-alert": "error",
+    "no-plusplus": "off",
+    "no-debugger": "error",
+    "no-unused-vars": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 1 }],
+    "prettier/prettier": "error",
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/prop-types": 0,
+    "react/display-name": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx", ".ts"] }],
+    "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": [2, { "caseSensitive": false } ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        "pathGroups": [{ "pattern": "react", "group": "external", "position": "before" }]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error", { "devDependencies": true, "optionalDependencies": true, "peerDependencies": true }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
