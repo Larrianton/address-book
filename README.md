@@ -1,9 +1,13 @@
 #Get started
 1.clone this repo and install dependencies with yarn or npm.
+``````````````````````````````````````````````````````
 2. go to https://dispex.org/api/vtest/docs/swagger/index.html click authorize and get 
 your key 
+`````````````````````````````````````````````````
 3. create .env file in project folder and copy text from .env.example with replace REACT_APP_AUTH_KEY  on your key 
+```````````````````````````````````````````````````````````````````````````````
 4. start the app
+````````````````````````````````````
 # Warning  
 The application may not work stably because backend not all time worked correctly
 
